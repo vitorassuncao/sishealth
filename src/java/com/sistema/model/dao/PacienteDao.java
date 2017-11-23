@@ -77,6 +77,18 @@ public class PacienteDao {
             session.close();
         }
     }
-      
-    
+     public Paciente consultarPorcpf(String cpf){
+         Session session = new ConnectionFactory().getSessionFactory();
+         Query query;
+         List<Paciente> paciente = null;
+         try{
+             query = session.createSQLQuery("SELECT * FROM paciente WHERE paccpf = '" + cpf +"'").addEntity(Paciente.class);
+             paciente = query.list();
+             return paciente.get(0);
+         }catch(Exception e){
+             return null;
+         }
+         
+         
+     }    
 }

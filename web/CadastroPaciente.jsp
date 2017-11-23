@@ -36,6 +36,7 @@
                     <ul class="dropdown-menu">
                         <li><a href="CadastroPaciente.jsp">Cadastrar</a></li>
                         <li><a href="listarPaciente.jsp">Listar</a></li>
+                        <li><a href="PesquisarPaciente.jsp">Pesquisar</a></li>
                     </ul>
                 </li>
             </ul>

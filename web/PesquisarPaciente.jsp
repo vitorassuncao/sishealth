@@ -1,12 +1,13 @@
 <%-- 
-    Document   : AlterarPaciente
-    Created on : 21/11/2017, 12:54:18
+    Document   : PesquisarPaciente
+    Created on : 23/11/2017, 16:23:16
     Author     : Heitor
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="com.sistema.model.bean.Paciente" %>
-<%@page import="com.sistema.model.dao.PacienteDao" %>
+
+<%@page import="com.sistema.model.dao.PacienteDao"%>
+<%@page import="com.sistema.model.bean.Paciente"%>
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -14,7 +15,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Alterar dados do paciente</title>
+    <title>Cadastrar Paciente</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -28,10 +29,11 @@
   </head>
   <body>
     <%
+        Paciente paciente = null;
         PacienteDao pacienteDao = new PacienteDao();
-        Paciente paciente = pacienteDao.consultarPorId(Integer.valueOf(request.getParameter("codigo")));
-    %>   
-    
+        String nome = request.getParameter("txtnome");
+    %>
+
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -54,25 +56,46 @@
             <div class="col-sm-3"></div>
             <div class="col-sm-6">
                 ​
-                <form method="POST" action="AlterarPaciente">
+                <form method="POST" action="">
                     <fieldset>
-                    <legend>Alterar dados do paciente</legend>
-                    <input type="hidden" name="txtid" value="<%= paciente.getPaccod()%>">
-                    <div class="form-group">
-                        <label for="nome">Nome:</label>
-                        <input type="text" class="form-control" id="nome" placeholder="Digite o nome" name="txtnome" value="<%= paciente.getPacnome()%>">
-                    </div>
-                    <div class="form-group">
-                        <label for="rg">RG:</label>
-                        <input type="text" class="form-control" id="rg" placeholder="Digite o RG" name="txtrg" value="<%= paciente.getPacrg()%>">
-                    </div>
-                    <div class="form-group">
-                        <label for="cpf">CPF:</label>
-                        <input type="text"  class="form-control" id="cpf" placeholder="Digite o CPF" name="txtcpf" value="<%= paciente.getPaccpf()%>">
-                    </div>
-                    <button type="submit" class="btn btn-info btn-lg">Salvar</button>
-                </fieldset>
+                        <legend>Pesquisar</legend>   
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Digite o CPF" name="txtcpf">
+                        </div>
+                        <button type="submit" class="btn btn-info btn-md" >Pesquisar</button>
+                    </fieldset>
+                    
+                    <br>
                 </form>
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>RG</th>
+                            <th>CPF</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="myTable">
+                        <%  
+                            if(request.getParameter("txtcpf") != null || request.getParameter("txtcpf") != ""){
+                                paciente = pacienteDao.consultarPorcpf(request.getParameter("txtcpf"));
+                                if(paciente != null){
+                        %>
+                        <tr>
+                            <td><%= paciente.getPacnome()%></td>
+                            <td><%= paciente.getPacrg()%></td>
+                            <td><%= paciente.getPaccpf()%></td>
+                            <td>
+                                
+                            </td>
+                        </tr>
+                        <%
+                                }
+                            }
+                        %>
+                    </tbody>
+                </table>
                
             </div>
             <div class="col-sm-3"></div>
