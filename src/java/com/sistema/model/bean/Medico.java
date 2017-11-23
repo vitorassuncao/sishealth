@@ -1,5 +1,5 @@
 package com.sistema.model.bean;
-// Generated 23/11/2017 16:10:36 by Hibernate Tools 4.3.1
+// Generated 23/11/2017 10:36:54 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -12,7 +12,6 @@ public class Medico  implements java.io.Serializable {
 
 
      private Integer medcod;
-     private Empresa empresa;
      private String medcpf;
      private String medlogin;
      private int medsenha;
@@ -27,8 +26,7 @@ public class Medico  implements java.io.Serializable {
     }
 
 	
-    public Medico(Empresa empresa, String medcpf, String medlogin, int medsenha, String mednome, String medrg, int medcrm) {
-        this.empresa = empresa;
+    public Medico(String medcpf, String medlogin, int medsenha, String mednome, String medrg, int medcrm) {
         this.medcpf = medcpf;
         this.medlogin = medlogin;
         this.medsenha = medsenha;
@@ -36,8 +34,7 @@ public class Medico  implements java.io.Serializable {
         this.medrg = medrg;
         this.medcrm = medcrm;
     }
-    public Medico(Empresa empresa, String medcpf, String medlogin, int medsenha, String mednome, String medrg, int medcrm, String tipouser, Set consultas, Set especialidades) {
-       this.empresa = empresa;
+    public Medico(String medcpf, String medlogin, int medsenha, String mednome, String medrg, int medcrm, String tipouser, Set consultas, Set especialidades) {
        this.medcpf = medcpf;
        this.medlogin = medlogin;
        this.medsenha = medsenha;
@@ -55,13 +52,6 @@ public class Medico  implements java.io.Serializable {
     
     public void setMedcod(Integer medcod) {
         this.medcod = medcod;
-    }
-    public Empresa getEmpresa() {
-        return this.empresa;
-    }
-    
-    public void setEmpresa(Empresa empresa) {
-        this.empresa = empresa;
     }
     public String getMedcpf() {
         return this.medcpf;

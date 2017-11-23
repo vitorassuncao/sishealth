@@ -1,16 +1,13 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 23/11/2017 16:10:37 by Hibernate Tools 4.3.1 -->
+<!-- Generated 23/11/2017 10:36:58 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="com.sistema.model.bean.Medico" table="medico" catalog="sistema" optimistic-lock="version">
         <id name="medcod" type="java.lang.Integer">
             <column name="medcod" />
             <generator class="identity" />
         </id>
-        <many-to-one name="empresa" class="com.sistema.model.bean.Empresa" fetch="select">
-            <column name="funempcod" not-null="true" />
-        </many-to-one>
         <property name="medcpf" type="string">
             <column name="medcpf" length="16" not-null="true" unique="true" />
         </property>
@@ -30,7 +27,7 @@
             <column name="medcrm" not-null="true" unique="true" />
         </property>
         <property name="tipouser" type="string">
-            <column name="tipouser" length="3" />
+            <column name="tipouser" length="4" />
         </property>
         <set name="consultas" table="consulta" inverse="true" lazy="true" fetch="select">
             <key>
