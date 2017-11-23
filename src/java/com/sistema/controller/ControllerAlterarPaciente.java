@@ -77,9 +77,9 @@ public class ControllerAlterarPaciente extends HttpServlet{
         PacienteDao pacienteDao = new PacienteDao();
         
         paciente = pacienteDao.consultarPorId(Integer.valueOf(request.getParameter("txtid")));
-        paciente.setNome(request.getParameter("txtnome"));
-        paciente.setRg(request.getParameter("txtrg"));
-        paciente.setCpf(request.getParameter("txtcpf"));
+        paciente.setPacnome(request.getParameter("txtnome"));
+        paciente.setPacrg(request.getParameter("txtrg"));
+        paciente.setPaccpf(request.getParameter("txtcpf"));
         
         pacienteDao.alterar(paciente);
         

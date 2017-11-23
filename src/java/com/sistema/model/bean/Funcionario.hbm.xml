@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 23/11/2017 10:36:58 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.sistema.model.bean.Funcionario" table="funcionario" catalog="sistema" optimistic-lock="version">
+        <id name="funcod" type="java.lang.Integer">
+            <column name="funcod" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="empresa" class="com.sistema.model.bean.Empresa" fetch="select">
+            <column name="funempcod" not-null="true" />
+        </many-to-one>
+        <property name="funcpf" type="string">
+            <column name="funcpf" length="20" not-null="true" unique="true" />
+        </property>
+        <property name="funlogin" type="string">
+            <column name="funlogin" length="10" not-null="true" unique="true" />
+        </property>
+        <property name="funsenha" type="int">
+            <column name="funsenha" not-null="true" />
+        </property>
+        <property name="funnome" type="string">
+            <column name="funnome" length="50" not-null="true" />
+        </property>
+        <property name="funrg" type="string">
+            <column name="funrg" length="10" not-null="true" />
+        </property>
+        <property name="tipouser" type="string">
+            <column name="tipouser" length="4" />
+        </property>
+        <set name="empresas" table="pertence" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="perfuncod" not-null="true" />
+            </key>
+            <many-to-many entity-name="com.sistema.model.bean.Empresa">
+                <column name="perempcod" not-null="true" />
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 23/11/2017 10:36:58 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.sistema.model.bean.Receita" table="receita" catalog="sistema" optimistic-lock="version">
+        <id name="reccod" type="java.lang.Integer">
+            <column name="reccod" />
+            <generator class="identity" />
+        </id>
+        <property name="recdesco" type="string">
+            <column name="recdesco" length="100" not-null="true" />
+        </property>
+        <set name="consultas" table="preescreve" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="prereccod" not-null="true" />
+            </key>
+            <many-to-many entity-name="com.sistema.model.bean.Consulta">
+                <column name="preconcod" not-null="true" />
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

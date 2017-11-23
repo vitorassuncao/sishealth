@@ -76,9 +76,9 @@ public class ControllerPaciente extends HttpServlet {
         Paciente paciente = new Paciente();
         PacienteDao pacienteDao = new PacienteDao();
         
-        paciente.setNome(request.getParameter("txtnome"));
-        paciente.setRg(request.getParameter("txtrg"));
-        paciente.setCpf(request.getParameter("txtcpf"));
+        paciente.setPacnome(request.getParameter("txtnome"));
+        paciente.setPacrg(request.getParameter("txtrg"));
+        paciente.setPaccpf(request.getParameter("txtcpf"));
         
         pacienteDao.salvar(paciente);
         

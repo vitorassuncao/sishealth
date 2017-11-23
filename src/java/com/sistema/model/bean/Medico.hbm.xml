@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 23/11/2017 10:36:58 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.sistema.model.bean.Medico" table="medico" catalog="sistema" optimistic-lock="version">
+        <id name="medcod" type="java.lang.Integer">
+            <column name="medcod" />
+            <generator class="identity" />
+        </id>
+        <property name="medcpf" type="string">
+            <column name="medcpf" length="16" not-null="true" unique="true" />
+        </property>
+        <property name="medlogin" type="string">
+            <column name="medlogin" length="10" not-null="true" unique="true" />
+        </property>
+        <property name="medsenha" type="int">
+            <column name="medsenha" not-null="true" />
+        </property>
+        <property name="mednome" type="string">
+            <column name="mednome" length="50" not-null="true" />
+        </property>
+        <property name="medrg" type="string">
+            <column name="medrg" length="10" not-null="true" />
+        </property>
+        <property name="medcrm" type="int">
+            <column name="medcrm" not-null="true" unique="true" />
+        </property>
+        <property name="tipouser" type="string">
+            <column name="tipouser" length="4" />
+        </property>
+        <set name="consultas" table="consulta" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="conmedcod" not-null="true" />
+            </key>
+            <one-to-many class="com.sistema.model.bean.Consulta" />
+        </set>
+        <set name="especialidades" table="especialista" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="medespcod" not-null="true" />
+            </key>
+            <many-to-many entity-name="com.sistema.model.bean.Especialidade">
+                <column name="epcespcod" not-null="true" />
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

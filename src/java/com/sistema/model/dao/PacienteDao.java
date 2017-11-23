@@ -41,7 +41,7 @@ public class PacienteDao {
         Session session = new ConnectionFactory().getSessionFactory();
         //Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         session.beginTransaction();
-        Query query = session.createSQLQuery("SELECT * FROM paciente WHERE codigo = "+codigo+"").addEntity(Paciente.class);
+        Query query = session.createSQLQuery("SELECT * FROM paciente WHERE paccod = "+codigo+"").addEntity(Paciente.class);
         lista = query.list();
         session.close();
         return lista.get(0);

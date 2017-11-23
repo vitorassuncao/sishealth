@@ -73,12 +73,12 @@
                             for(Paciente b: listPaciente) {
                         %>
                         <tr>
-                            <td><%= b.getNome() %></td>
-                            <td><%= b.getRg()%></td>
-                            <td><%= b.getCpf()%></td>
+                            <td><%= b.getPacnome()%></td>
+                            <td><%= b.getPacrg()%></td>
+                            <td><%= b.getPaccpf()%></td>
                             <td>
-                                <input type="button" class="btn btn-default" value="Alterar" name="btAlterar" onclick="location='AlterarPaciente.jsp?codigo=<%=b.getCodigo()%>'"/>
-                                <input type="button" class="btn btn-danger" value="Excluir" name="btExcluir" onclick="location='ExcluirPaciente.jsp?codigo=<%=b.getCodigo()%>'"/>
+                                <input type="button" class="btn btn-default" value="Alterar" name="btAlterar" onclick="location='AlterarPaciente.jsp?codigo=<%=b.getPaccod()%>'"/>
+                                <input type="button" class="btn btn-danger" value="Excluir" name="btExcluir" onclick="location='ExcluirPaciente.jsp?codigo=<%=b.getPaccod()%>'"/>
                             </td>
                         </tr>
                         <%

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 23/11/2017 10:36:58 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.sistema.model.bean.Paciente" table="paciente" catalog="sistema" optimistic-lock="version">
+        <id name="paccod" type="java.lang.Integer">
+            <column name="paccod" />
+            <generator class="identity" />
+        </id>
+        <property name="pacnome" type="string">
+            <column name="pacnome" length="50" not-null="true" unique="true" />
+        </property>
+        <property name="pacrg" type="string">
+            <column name="pacrg" length="10" not-null="true" />
+        </property>
+        <property name="paccpf" type="string">
+            <column name="paccpf" length="18" not-null="true" unique="true" />
+        </property>
+        <property name="tipouser" type="string">
+            <column name="tipouser" length="4" />
+        </property>
+        <set name="quadroclinicos" table="quadroclinico" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="quapaccod" not-null="true" />
+            </key>
+            <one-to-many class="com.sistema.model.bean.Quadroclinico" />
+        </set>
+        <set name="triagems" table="triagem" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="tripaccod" not-null="true" />
+            </key>
+            <one-to-many class="com.sistema.model.bean.Triagem" />
+        </set>
+        <set name="consultas" table="consulta" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="conpaccod" not-null="true" />
+            </key>
+            <one-to-many class="com.sistema.model.bean.Consulta" />
+        </set>
+    </class>
+</hibernate-mapping>

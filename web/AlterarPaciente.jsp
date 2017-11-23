@@ -56,18 +56,18 @@
                 <form method="POST" action="AlterarPaciente">
                     <fieldset>
                     <legend>Alterar dados do paciente</legend>
-                    <input type="hidden" name="txtid" value="<%= paciente.getCodigo()%>">
+                    <input type="hidden" name="txtid" value="<%= paciente.getPaccod()%>">
                     <div class="form-group">
                         <label for="nome">Nome:</label>
-                        <input type="text" class="form-control" id="nome" placeholder="Digite o nome" name="txtnome" value="<%= paciente.getNome() %>">
+                        <input type="text" class="form-control" id="nome" placeholder="Digite o nome" name="txtnome" value="<%= paciente.getPacnome()%>">
                     </div>
                     <div class="form-group">
                         <label for="rg">RG:</label>
-                        <input type="text" class="form-control" id="rg" placeholder="Digite o RG" name="txtrg" value="<%= paciente.getRg()%>">
+                        <input type="text" class="form-control" id="rg" placeholder="Digite o RG" name="txtrg" value="<%= paciente.getPacrg()%>">
                     </div>
                     <div class="form-group">
                         <label for="cpf">CPF:</label>
-                        <input type="text"  class="form-control" id="cpf" placeholder="Digite o CPF" name="txtcpf" value="<%= paciente.getCpf() %>">
+                        <input type="text"  class="form-control" id="cpf" placeholder="Digite o CPF" name="txtcpf" value="<%= paciente.getPaccpf()%>">
                     </div>
                     <button type="submit" class="btn btn-info btn-lg">Salvar</button>
                 </fieldset>

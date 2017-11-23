@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 23/11/2017 10:36:58 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.sistema.model.bean.Gerente" table="gerente" catalog="sistema" optimistic-lock="version">
+        <id name="gercod" type="java.lang.Integer">
+            <column name="gercod" />
+            <generator class="identity" />
+        </id>
+        <property name="gercpf" type="string">
+            <column name="gercpf" length="18" not-null="true" unique="true" />
+        </property>
+        <property name="gersenha" type="int">
+            <column name="gersenha" not-null="true" />
+        </property>
+        <property name="gernome" type="string">
+            <column name="gernome" length="50" not-null="true" />
+        </property>
+        <property name="gerlogin" type="string">
+            <column name="gerlogin" length="10" not-null="true" unique="true" />
+        </property>
+        <property name="gerrg" type="string">
+            <column name="gerrg" length="10" not-null="true" />
+        </property>
+        <property name="tipouser" type="string">
+            <column name="tipouser" length="4" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
 <!--
 DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
 
@@ -39,32 +39,24 @@ made subject to such option by the copyright holder.
 
 Contributor(s):
 -->
-<hibernate-configuration>
-  <session-factory>
-    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/sistema?zeroDateTimeBehavior=convertToNull</property>
-    <property name="hibernate.connection.username">root</property>
-    <property name="hibernate.connection.pool_size">1</property>
-    <!-- Enable Hibernate's automatic session context management -->
-    <property name="current_session_context_class">thread</property>
-    <!-- Disable the second-level cache -->
-    <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
-    <!-- Echo all executed SQL to stdout -->
-    <property name="show_sql">true</property>
-    <!-- Drop and re-create th database schema on startup -->
-    <property name="hbm2ddl.auto">update</property>
-    <mapping resource="com/sistema/model/bean/Gerente.hbm.xml"/>
-    <mapping resource="com/sistema/model/bean/Funcionario.hbm.xml"/>
-    <mapping resource="com/sistema/model/bean/Enfermeiro.hbm.xml"/>
-    <mapping resource="com/sistema/model/bean/Consulta.hbm.xml"/>
-    <mapping resource="com/sistema/model/bean/Paciente.hbm.xml"/>
-    <mapping resource="com/sistema/model/bean/Exame.hbm.xml"/>
-    <mapping resource="com/sistema/model/bean/Admsistema.hbm.xml"/>
-    <mapping resource="com/sistema/model/bean/Medico.hbm.xml"/>
-    <mapping resource="com/sistema/model/bean/Triagem.hbm.xml"/>
-    <mapping resource="com/sistema/model/bean/Especialidade.hbm.xml"/>
-    <mapping resource="com/sistema/model/bean/Empresa.hbm.xml"/>
-    <mapping resource="com/sistema/model/bean/Quadroclinico.hbm.xml"/>
-    <mapping resource="com/sistema/model/bean/Receita.hbm.xml"/>
-  </session-factory>
-</hibernate-configuration>
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="sistema"/>
+  <table-filter match-name="triagem"/>
+  <table-filter match-name="exame"/>
+  <table-filter match-name="receita"/>
+  <table-filter match-name="pertence"/>
+  <table-filter match-name="funcionario"/>
+  <table-filter match-name="gerente"/>
+  <table-filter match-name="quadroclinico"/>
+  <table-filter match-name="solicitacao"/>
+  <table-filter match-name="especialista"/>
+  <table-filter match-name="especialidade"/>
+  <table-filter match-name="preescreve"/>
+  <table-filter match-name="empresa"/>
+  <table-filter match-name="admsistema"/>
+  <table-filter match-name="diagnostico"/>
+  <table-filter match-name="consulta"/>
+  <table-filter match-name="paciente"/>
+  <table-filter match-name="medico"/>
+  <table-filter match-name="enfermeiro"/>
+</hibernate-reverse-engineering>
