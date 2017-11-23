@@ -1,5 +1,5 @@
 package com.sistema.model.bean;
-// Generated 21/11/2017 11:03:53 by Hibernate Tools 4.3.1
+// Generated 23/11/2017 00:18:19 by Hibernate Tools 4.3.1
 
 
 
