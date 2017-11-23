@@ -1,5 +1,5 @@
 package com.sistema.model.bean;
-// Generated 23/11/2017 10:36:54 by Hibernate Tools 4.3.1
+// Generated 23/11/2017 16:10:36 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -17,7 +17,7 @@ public class Consulta  implements java.io.Serializable {
      private Paciente paciente;
      private Date condata;
      private Set receitas = new HashSet(0);
-     private Set exames = new HashSet(0);
+     private Set solicitacaos = new HashSet(0);
      private Set quadroclinicos = new HashSet(0);
 
     public Consulta() {
@@ -29,12 +29,12 @@ public class Consulta  implements java.io.Serializable {
         this.paciente = paciente;
         this.condata = condata;
     }
-    public Consulta(Medico medico, Paciente paciente, Date condata, Set receitas, Set exames, Set quadroclinicos) {
+    public Consulta(Medico medico, Paciente paciente, Date condata, Set receitas, Set solicitacaos, Set quadroclinicos) {
        this.medico = medico;
        this.paciente = paciente;
        this.condata = condata;
        this.receitas = receitas;
-       this.exames = exames;
+       this.solicitacaos = solicitacaos;
        this.quadroclinicos = quadroclinicos;
     }
    
@@ -73,12 +73,12 @@ public class Consulta  implements java.io.Serializable {
     public void setReceitas(Set receitas) {
         this.receitas = receitas;
     }
-    public Set getExames() {
-        return this.exames;
+    public Set getSolicitacaos() {
+        return this.solicitacaos;
     }
     
-    public void setExames(Set exames) {
-        this.exames = exames;
+    public void setSolicitacaos(Set solicitacaos) {
+        this.solicitacaos = solicitacaos;
     }
     public Set getQuadroclinicos() {
         return this.quadroclinicos;

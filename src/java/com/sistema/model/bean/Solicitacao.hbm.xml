@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 23/11/2017 16:10:37 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.sistema.model.bean.Solicitacao" table="solicitacao" catalog="sistema" optimistic-lock="version">
+        <composite-id name="id" class="com.sistema.model.bean.SolicitacaoId">
+            <key-property name="solexacod" type="int">
+                <column name="solexacod" />
+            </key-property>
+            <key-property name="solexaconcod" type="int">
+                <column name="solexaconcod" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="consulta" class="com.sistema.model.bean.Consulta" update="false" insert="false" fetch="select">
+            <column name="solexaconcod" not-null="true" />
+        </many-to-one>
+        <many-to-one name="exame" class="com.sistema.model.bean.Exame" update="false" insert="false" fetch="select">
+            <column name="solexacod" not-null="true" />
+        </many-to-one>
+        <property name="soldata" type="date">
+            <column name="soldata" length="10" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

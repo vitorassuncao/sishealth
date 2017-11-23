@@ -1,5 +1,5 @@
 package com.sistema.model.bean;
-// Generated 23/11/2017 10:36:54 by Hibernate Tools 4.3.1
+// Generated 23/11/2017 16:10:36 by Hibernate Tools 4.3.1
 
 
 
@@ -10,6 +10,7 @@ public class Gerente  implements java.io.Serializable {
 
 
      private Integer gercod;
+     private Empresa empresa;
      private String gercpf;
      private int gersenha;
      private String gernome;
@@ -21,14 +22,16 @@ public class Gerente  implements java.io.Serializable {
     }
 
 	
-    public Gerente(String gercpf, int gersenha, String gernome, String gerlogin, String gerrg) {
+    public Gerente(Empresa empresa, String gercpf, int gersenha, String gernome, String gerlogin, String gerrg) {
+        this.empresa = empresa;
         this.gercpf = gercpf;
         this.gersenha = gersenha;
         this.gernome = gernome;
         this.gerlogin = gerlogin;
         this.gerrg = gerrg;
     }
-    public Gerente(String gercpf, int gersenha, String gernome, String gerlogin, String gerrg, String tipouser) {
+    public Gerente(Empresa empresa, String gercpf, int gersenha, String gernome, String gerlogin, String gerrg, String tipouser) {
+       this.empresa = empresa;
        this.gercpf = gercpf;
        this.gersenha = gersenha;
        this.gernome = gernome;
@@ -43,6 +46,13 @@ public class Gerente  implements java.io.Serializable {
     
     public void setGercod(Integer gercod) {
         this.gercod = gercod;
+    }
+    public Empresa getEmpresa() {
+        return this.empresa;
+    }
+    
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
     }
     public String getGercpf() {
         return this.gercpf;

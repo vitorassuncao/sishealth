@@ -41,21 +41,21 @@ Contributor(s):
 -->
 <hibernate-reverse-engineering>
   <schema-selection match-catalog="sistema"/>
+  <table-filter match-name="medico"/>
+  <table-filter match-name="triagem"/>
+  <table-filter match-name="preescreve"/>
+  <table-filter match-name="receita"/>
+  <table-filter match-name="quadroclinico"/>
   <table-filter match-name="especialista"/>
   <table-filter match-name="solicitacao"/>
-  <table-filter match-name="empresa"/>
-  <table-filter match-name="diagnostico"/>
-  <table-filter match-name="enfermeiro"/>
   <table-filter match-name="atendente"/>
+  <table-filter match-name="diagnostico"/>
   <table-filter match-name="gerente"/>
-  <table-filter match-name="paciente"/>
-  <table-filter match-name="consulta"/>
-  <table-filter match-name="receita"/>
-  <table-filter match-name="especialidade"/>
-  <table-filter match-name="medico"/>
-  <table-filter match-name="preescreve"/>
-  <table-filter match-name="quadroclinico"/>
-  <table-filter match-name="triagem"/>
-  <table-filter match-name="admsistema"/>
   <table-filter match-name="exame"/>
+  <table-filter match-name="admsistema"/>
+  <table-filter match-name="especialidade"/>
+  <table-filter match-name="paciente"/>
+  <table-filter match-name="empresa"/>
+  <table-filter match-name="consulta"/>
+  <table-filter match-name="enfermeiro"/>
 </hibernate-reverse-engineering>

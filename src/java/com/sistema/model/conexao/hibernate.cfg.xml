@@ -53,18 +53,19 @@ Contributor(s):
     <property name="show_sql">true</property>
     <!-- Drop and re-create th database schema on startup -->
     <property name="hbm2ddl.auto">update</property>
-    <mapping resource="com/sistema/model/bean/Gerente.hbm.xml"/>
-    <mapping resource="com/sistema/model/bean/Funcionario.hbm.xml"/>
-    <mapping resource="com/sistema/model/bean/Enfermeiro.hbm.xml"/>
-    <mapping resource="com/sistema/model/bean/Consulta.hbm.xml"/>
-    <mapping resource="com/sistema/model/bean/Paciente.hbm.xml"/>
-    <mapping resource="com/sistema/model/bean/Exame.hbm.xml"/>
-    <mapping resource="com/sistema/model/bean/Admsistema.hbm.xml"/>
-    <mapping resource="com/sistema/model/bean/Medico.hbm.xml"/>
-    <mapping resource="com/sistema/model/bean/Triagem.hbm.xml"/>
-    <mapping resource="com/sistema/model/bean/Especialidade.hbm.xml"/>
-    <mapping resource="com/sistema/model/bean/Empresa.hbm.xml"/>
     <mapping resource="com/sistema/model/bean/Quadroclinico.hbm.xml"/>
+    <mapping resource="com/sistema/model/bean/Gerente.hbm.xml"/>
     <mapping resource="com/sistema/model/bean/Receita.hbm.xml"/>
+    <mapping resource="com/sistema/model/bean/Exame.hbm.xml"/>
+    <mapping resource="com/sistema/model/bean/Atendente.hbm.xml"/>
+    <mapping resource="com/sistema/model/bean/Empresa.hbm.xml"/>
+    <mapping resource="com/sistema/model/bean/Medico.hbm.xml"/>
+    <mapping resource="com/sistema/model/bean/Especialidade.hbm.xml"/>
+    <mapping resource="com/sistema/model/bean/Solicitacao.hbm.xml"/>
+    <mapping resource="com/sistema/model/bean/Enfermeiro.hbm.xml"/>
+    <mapping resource="com/sistema/model/bean/Triagem.hbm.xml"/>
+    <mapping resource="com/sistema/model/bean/Paciente.hbm.xml"/>
+    <mapping resource="com/sistema/model/bean/Admsistema.hbm.xml"/>
+    <mapping resource="com/sistema/model/bean/Consulta.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>
