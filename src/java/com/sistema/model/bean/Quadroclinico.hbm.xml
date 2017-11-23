@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 23/11/2017 16:10:37 by Hibernate Tools 4.3.1 -->
+<!-- Generated 23/11/2017 10:36:58 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="com.sistema.model.bean.Quadroclinico" table="quadroclinico" catalog="sistema" optimistic-lock="version">
         <id name="quacod" type="java.lang.Integer">
@@ -15,7 +15,7 @@
             <column name="quadiagnostico" length="50" not-null="true" />
         </property>
         <property name="quasintomas" type="string">
-            <column name="quasintomas" length="100" not-null="true" />
+            <column name="quasintomas" length="50" not-null="true" />
         </property>
         <set name="consultas" table="diagnostico" inverse="false" lazy="true" fetch="select">
             <key>

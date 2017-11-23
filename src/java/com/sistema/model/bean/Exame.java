@@ -1,5 +1,5 @@
 package com.sistema.model.bean;
-// Generated 23/11/2017 16:10:36 by Hibernate Tools 4.3.1
+// Generated 23/11/2017 10:36:54 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -13,7 +13,7 @@ public class Exame  implements java.io.Serializable {
 
      private Integer exacod;
      private String exadesc;
-     private Set solicitacaos = new HashSet(0);
+     private Set consultas = new HashSet(0);
 
     public Exame() {
     }
@@ -22,9 +22,9 @@ public class Exame  implements java.io.Serializable {
     public Exame(String exadesc) {
         this.exadesc = exadesc;
     }
-    public Exame(String exadesc, Set solicitacaos) {
+    public Exame(String exadesc, Set consultas) {
        this.exadesc = exadesc;
-       this.solicitacaos = solicitacaos;
+       this.consultas = consultas;
     }
    
     public Integer getExacod() {
@@ -41,12 +41,12 @@ public class Exame  implements java.io.Serializable {
     public void setExadesc(String exadesc) {
         this.exadesc = exadesc;
     }
-    public Set getSolicitacaos() {
-        return this.solicitacaos;
+    public Set getConsultas() {
+        return this.consultas;
     }
     
-    public void setSolicitacaos(Set solicitacaos) {
-        this.solicitacaos = solicitacaos;
+    public void setConsultas(Set consultas) {
+        this.consultas = consultas;
     }
 
 

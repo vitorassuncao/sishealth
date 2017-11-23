@@ -1,5 +1,5 @@
 package com.sistema.model.bean;
-// Generated 23/11/2017 16:10:36 by Hibernate Tools 4.3.1
+// Generated 23/11/2017 10:36:54 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -12,7 +12,6 @@ public class Enfermeiro  implements java.io.Serializable {
 
 
      private Integer enfcod;
-     private Empresa empresa;
      private String enfcpf;
      private int enfsenham;
      private String enfloginm;
@@ -26,8 +25,7 @@ public class Enfermeiro  implements java.io.Serializable {
     }
 
 	
-    public Enfermeiro(Empresa empresa, String enfcpf, int enfsenham, String enfloginm, String enfnome, String enfrg, int enfcoren) {
-        this.empresa = empresa;
+    public Enfermeiro(String enfcpf, int enfsenham, String enfloginm, String enfnome, String enfrg, int enfcoren) {
         this.enfcpf = enfcpf;
         this.enfsenham = enfsenham;
         this.enfloginm = enfloginm;
@@ -35,8 +33,7 @@ public class Enfermeiro  implements java.io.Serializable {
         this.enfrg = enfrg;
         this.enfcoren = enfcoren;
     }
-    public Enfermeiro(Empresa empresa, String enfcpf, int enfsenham, String enfloginm, String enfnome, String enfrg, int enfcoren, String tipouser, Set triagems) {
-       this.empresa = empresa;
+    public Enfermeiro(String enfcpf, int enfsenham, String enfloginm, String enfnome, String enfrg, int enfcoren, String tipouser, Set triagems) {
        this.enfcpf = enfcpf;
        this.enfsenham = enfsenham;
        this.enfloginm = enfloginm;
@@ -53,13 +50,6 @@ public class Enfermeiro  implements java.io.Serializable {
     
     public void setEnfcod(Integer enfcod) {
         this.enfcod = enfcod;
-    }
-    public Empresa getEmpresa() {
-        return this.empresa;
-    }
-    
-    public void setEmpresa(Empresa empresa) {
-        this.empresa = empresa;
     }
     public String getEnfcpf() {
         return this.enfcpf;
